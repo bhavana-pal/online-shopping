@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HelloController{
-	@RequestMapping(value="/")
+	@RequestMapping(value={"/","/home"})
 	public ModelAndView home(){
 		ModelAndView mv=new ModelAndView("page");
 		mv.addObject("title","Home");
@@ -25,6 +25,13 @@ public class HelloController{
 		ModelAndView mv=new ModelAndView("page");
 		mv.addObject("title","Contact us");
 		mv.addObject("userClickContact",true);
+		return mv;
+	}
+	@RequestMapping(value="/products")
+	public ModelAndView products(){
+		ModelAndView mv=new ModelAndView("page");
+		mv.addObject("title","View products");
+		mv.addObject("userClickViewProduct",true);
 		return mv;
 	}
 }

@@ -20,6 +20,11 @@
 
 <title>Womenshopping- ${title }</title>
 
+<script>
+	window.menu = '${title}';
+</script>
+
+
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
@@ -46,14 +51,16 @@
 		<%@include file="home.jsp"%>
 	</c:if>
 
-<c:if test="${userClickAbout==true}">
+	<c:if test="${userClickAbout==true}">
 		<%@include file="about.jsp"%>
 	</c:if>
 
-<c:if test="${userClickContact==true}">
+	<c:if test="${userClickContact==true}">
 		<%@include file="contact.jsp"%>
 	</c:if>
-
+	<c:if test="${userClickViewProduct==true}">
+		<%@include file="products.jsp"%>
+	</c:if>
 
 	<!-- /.container -->
 	<!-- footer comes here -->
@@ -64,6 +71,9 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="${js}/bootstrap.min.js"></script>
+	
+	<!-- self coded -->
+	<script src="${js}/myapp.js"></script>
 
 </body>
 
