@@ -24,9 +24,11 @@
 	window.menu = '${title}';
 </script>
 
-
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap theme CSS -->
+<link href="${css}/theme.css" rel="stylesheet">
 
 <!-- Custom CSS -->
 <link href="${css}/app.css" rel="stylesheet">
@@ -42,38 +44,47 @@
 
 <body>
 
-	<!-- Navigation -->
-	<%@include file="./shared/navbar.jsp"%>
 
-	<!-- Page Content -->
+	<div class="wrapper">
+		<!-- Navigation -->
+		<%@include file="./shared/navbar.jsp"%>
 
-	<c:if test="${userClickHome==true}">
-		<%@include file="home.jsp"%>
-	</c:if>
 
-	<c:if test="${userClickAbout==true}">
-		<%@include file="about.jsp"%>
-	</c:if>
+		<div class="content">
+			<!-- Page Content -->
 
-	<c:if test="${userClickContact==true}">
-		<%@include file="contact.jsp"%>
-	</c:if>
-	<c:if test="${userClickViewProduct==true}">
-		<%@include file="products.jsp"%>
-	</c:if>
+			<c:if test="${userClickHome==true}">
+				<%@include file="home.jsp"%>
+			</c:if>
 
-	<!-- /.container -->
-	<!-- footer comes here -->
-	<%@include file="./shared/footer.jsp"%>
+			<c:if test="${userClickAbout==true}">
+				<%@include file="about.jsp"%>
+			</c:if>
 
-	<!-- jQuery -->
-	<script src="${js}/jquery.js"></script>
+			<c:if test="${userClickContact==true}">
+				<%@include file="contact.jsp"%>
+			</c:if>
+			<c:if test="${userClickViewProduct==true}">
+				<%@include file="products.jsp"%>
+			</c:if>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="${js}/bootstrap.min.js"></script>
-	
-	<!-- self coded -->
-	<script src="${js}/myapp.js"></script>
+		</div>
+		
+		
+		<!-- /.container -->
+		<!-- footer comes here -->
+		<%@include file="./shared/footer.jsp"%>
+
+		<!-- jQuery -->
+		<script src="${js}/jquery.js"></script>
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="${js}/bootstrap.min.js"></script>
+
+		<!-- self coded -->
+		<script src="${js}/myapp.js"></script>
+
+	</div>
 
 </body>
 
